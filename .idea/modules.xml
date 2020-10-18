@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Randomizer_Menu_Makanan.iml" filepath="$PROJECT_DIR$/.idea/modules/Randomizer_Menu_Makanan.iml" group="Randomizer_Menu_Makanan" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Randomizer Menu Makanan/app" />
-    </modules>
-  </component>
-</project>
