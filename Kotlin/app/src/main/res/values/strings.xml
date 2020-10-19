@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Makan Apa</string>
+    <string name="left_drawer_text">Home</string>
+    <string name="right_drawer_text">This is Right Drawer</string>
+    <string name="second_fragment_text">Page 2</string>
+    <string name="main_et_hint">Input some text:</string>
+    <string name="main_btn_text">Click me</string>
+    <string name="openDrawer">Open</string>
+    <string name="closeDrawer">Close</string>
+    <string name="left_btn_home_text">Home</string>
+    <string name="left_btn_cari_text">Cari</string>
+    <string name="left_btn_menu_text">Menu</string>
+    <string name="left_btn_setting_text">Setting</string>
+    <string name="left_btn_exit_text">Exit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
