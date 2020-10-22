@@ -1,4 +1,4 @@
-package com.example.randomizermenumakanan.Fragment
+package com.example.randomizermenumakanan.View
 
 import android.content.Context
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.randomizermenumakanan.R
+import com.example.randomizermenumakanan.View.FragmentListener
 
 class LeftFragment : Fragment(), View.OnClickListener {
     private lateinit var btnHome: Button
@@ -37,11 +38,11 @@ class LeftFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(view: View) {
         if (view === btnHome) {
-            listener!!.changePage(1)
+            listener.changePage(1)
         } else if (view === btnmenu) {
-            listener!!.changePage(2)
+            listener.changePage(2)
         } else if (view === btnExit) {
-            listener!!.closeApplication()
+            listener.closeApplication()
         }
     }
 }

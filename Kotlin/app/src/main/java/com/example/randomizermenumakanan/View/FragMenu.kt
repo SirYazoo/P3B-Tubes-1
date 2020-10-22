@@ -1,4 +1,4 @@
-package com.example.randomizermenumakanan.Fragment
+package com.example.randomizermenumakanan.View
 
 import android.content.Context
 import android.os.Bundle
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import com.example.randomizermenumakanan.R
+import com.example.randomizermenumakanan.View.FragmentListener
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FragMenu : Fragment(), View.OnClickListener {
@@ -34,7 +34,7 @@ class FragMenu : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         if(v == this.btnTambah){
-            listener!!.changePage(3)
+            listener.changePage(3)
         }
     }
 }
