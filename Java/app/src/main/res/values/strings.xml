@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Randomizer Menu Makanan</string>
+    <string name="app_name">Makan Apa</string>
     <string name="left_drawer_text">Home</string>
     <string name="right_drawer_text">This is Right Drawer</string>
     <string name="second_fragment_text">Page 2</string>
@@ -8,6 +8,9 @@
     <string name="openDrawer">Open</string>
     <string name="closeDrawer">Close</string>
     <string name="left_btn_home_text">Home</string>
-    <string name="left_btn_page2_text">Page2</string>
+    <string name="left_btn_cari_text">Cari</string>
+    <string name="left_btn_menu_text">Menu</string>
+    <string name="left_btn_setting_text">Setting</string>
     <string name="left_btn_exit_text">Exit</string>
+    <string name="nama_makanan">Nama Makanan</string>
 </resources>

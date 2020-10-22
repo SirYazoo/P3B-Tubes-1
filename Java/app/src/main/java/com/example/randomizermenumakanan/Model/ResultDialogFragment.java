@@ -1,4 +1,4 @@
-package com.example.randomizermenumakanan;
+package com.example.randomizermenumakanan.Model;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
+
+import com.example.randomizermenumakanan.R;
 
 public class ResultDialogFragment extends DialogFragment {
 
