@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     private FragTambahMenu fragTambah;
     private FragItemDetail fragDetail;
     private FragEdit fragEdit;
-    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

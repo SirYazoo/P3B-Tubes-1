@@ -9,16 +9,18 @@ import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.randomizermenumakanan.IFragment;
+import com.example.randomizermenumakanan.Model.IsiMenu;
 import com.example.randomizermenumakanan.Presenter.MainPresenter;
-import com.example.randomizermenumakanan.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.randomizermenumakanan.databinding.FragmentFragMenuBinding;
 
-public class FragMenu extends Fragment implements View.OnClickListener {
-    private FloatingActionButton btnTambah;
+import java.util.List;
+
+public class FragMenu extends Fragment implements View.OnClickListener, IFragment {
     private FragmentListener listener;
-    private ListView listMenu;
     private Adapter adapter;
-    private MainPresenter presenter;
+    private MainPresenter mainPresenter;
+    private FragmentFragMenuBinding binding;
 
     public FragMenu() {
 
@@ -26,17 +28,17 @@ public class FragMenu extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_frag_menu, container, false);
-        this.btnTambah = view.findViewById(R.id.btnTambah);
-        this.listMenu = view.findViewById(R.id.lvMenu);
-        this.adapter = new Adapter(this, this.presenter);
-        this.btnTambah.setOnClickListener(this);
-        return view;
+        this.binding = FragmentFragMenuBinding.inflate(inflater, container, false);
+        this.mainPresenter = new MainPresenter(this);
+        this.adapter = new Adapter(this.getActivity(), this.mainPresenter);
+        this.binding.lvMenu.setAdapter(this.adapter);
+        this.binding.btnTambah.setOnClickListener(this);
+        return this.binding.getRoot();
     }
 
     @Override
     public void onClick(View v) {
-        if (v == this.btnTambah) {
+        if (v == this.binding.btnTambah) {
             this.listener.changePage(3);
         }
     }
@@ -49,5 +51,15 @@ public class FragMenu extends Fragment implements View.OnClickListener {
         } else {
             throw new ClassCastException(context.toString() + " must implement FragmentListener");
         }
+    }
+
+    @Override
+    public void updateList(List<IsiMenu> isiMenu) {
+        this.adapter.update(isiMenu);
+    }
+
+    @Override
+    public void resetForm() {
+
     }
 }

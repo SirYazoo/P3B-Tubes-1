@@ -5,21 +5,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.randomizermenumakanan.Model.IsiMenu;
-import com.example.randomizermenumakanan.R;
+import com.example.randomizermenumakanan.databinding.FragmentMainBinding;
 
-import java.util.List;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
-    private EditText etMain;
-    private Button btnCari;
-    private List<IsiMenu> itemList;
     private FragmentListener listener;
+    private FragmentMainBinding binding;
 
     public MainFragment() {
 
@@ -27,15 +21,14 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
-        this.btnCari = view.findViewById(R.id.btnCari);
-        this.btnCari.setOnClickListener(this);
-        return view;
+        this.binding = FragmentMainBinding.inflate(inflater, container, false);
+        this.binding.btnCari.setOnClickListener(this);
+        return this.binding.getRoot();
     }
 
     @Override
     public void onClick(View v) {
-        if (v == this.btnCari) {
+        if (v == this.binding.btnCari) {
             this.listener.changePage(4);
         }
     }

@@ -10,7 +10,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/namaMakanan1"
+            android:id="@+id/btnListMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -23,6 +23,7 @@
             android:textStyle="bold" />
 
         <ImageButton
+            android:id="@+id/imgTrash"
             android:layout_width="400dp"
             android:layout_height="55dp"
             android:background="@null"

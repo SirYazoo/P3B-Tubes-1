@@ -26,6 +26,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/tvNama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nama_makanan"
@@ -45,6 +46,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/tvTag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tag"
@@ -64,6 +66,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/tvBahan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/bahan"
@@ -83,6 +86,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/tvLangkah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/langkah_memasak"
@@ -101,6 +105,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/tvRestoran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tersedia_resto"
