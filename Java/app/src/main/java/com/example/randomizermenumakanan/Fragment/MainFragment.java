@@ -1,18 +1,17 @@
-package com.example.randomizermenumakanan;
+package com.example.randomizermenumakanan.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+
+import com.example.randomizermenumakanan.R;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
 
-    private EditText etMain;
     private Button btnMain;
 
     public MainFragment() {
@@ -22,7 +21,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        this.etMain = view.findViewById(R.id.et_Main);
         this.btnMain = view.findViewById(R.id.btn_Main);
         this.btnMain.setOnClickListener(this);
         return view;
@@ -30,11 +28,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view == this.btnMain) {
-            ResultDialogFragment rdf = new ResultDialogFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            rdf.show(ft, "Your input : " + this.etMain.getText());
-            this.etMain.setText("");
-        }
+//        if (view == this.btnMain) {
+//
+//        }
     }
 }

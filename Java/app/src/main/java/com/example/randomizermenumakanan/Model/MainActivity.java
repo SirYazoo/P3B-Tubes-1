@@ -1,4 +1,4 @@
-package com.example.randomizermenumakanan;
+package com.example.randomizermenumakanan.Model;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +9,13 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import com.example.randomizermenumakanan.Fragment.FragmentListener;
+import com.example.randomizermenumakanan.Fragment.MainFragment;
+import com.example.randomizermenumakanan.R;
+
 public class MainActivity extends AppCompatActivity implements FragmentListener {
 
     private MainFragment mainFragment;
-    private SecondFragment secondFragment;
     private FragmentManager fragmentManager;
     private Toolbar toolbar;
     private DrawerLayout drawer;
@@ -28,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         drawer.addDrawerListener(abdt);
         abdt.syncState();
         this.mainFragment = new MainFragment();
-        this.secondFragment = new SecondFragment();
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.fragment_container, this.mainFragment).addToBackStack(null).commit();
@@ -42,18 +44,18 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
             } else {
                 ft.add(R.id.fragment_container, this.mainFragment);
             }
-            if (this.secondFragment.isAdded()) {
-                ft.hide(this.secondFragment);
-            }
-        } else if (page == 2) {
-            if (this.secondFragment.isAdded()) {
-                ft.show(this.secondFragment);
-            } else {
-                ft.add(R.id.fragment_container, this.secondFragment).addToBackStack(null);
-            }
-            if (this.mainFragment.isAdded()) {
-                ft.hide(this.mainFragment);
-            }
+//            if (this.secondFragment.isAdded()) {
+//                ft.hide(this.secondFragment);
+//            }
+//        } else if (page == 2) {
+//            if (this.secondFragment.isAdded()) {
+//                ft.show(this.secondFragment);
+//            } else {
+//                ft.add(R.id.fragment_container, this.secondFragment).addToBackStack(null);
+//            }
+//            if (this.mainFragment.isAdded()) {
+//                ft.hide(this.mainFragment);
+//            }
         }
         ft.commit();
         this.drawer.closeDrawers();

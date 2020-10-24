@@ -1,4 +1,4 @@
-package com.example.randomizermenumakanan;
+package com.example.randomizermenumakanan.Fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,10 +9,12 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.randomizermenumakanan.R;
+
 public class LeftFragment extends Fragment implements View.OnClickListener {
 
     private Button btnHome;
-    private Button btnPage2;
+    private Button btnMenu;
     private Button btnExit;
     private FragmentListener listener;
 
@@ -24,10 +26,10 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_left, container, false);
         this.btnHome = view.findViewById(R.id.btn_home);
-        this.btnPage2 = view.findViewById(R.id.btn_page2);
+        this.btnMenu = view.findViewById(R.id.btn_menu);
         this.btnExit = view.findViewById(R.id.btn_exit);
         this.btnHome.setOnClickListener(this);
-        this.btnPage2.setOnClickListener(this);
+        this.btnMenu.setOnClickListener(this);
         this.btnExit.setOnClickListener(this);
         return view;
     }
@@ -46,7 +48,7 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         if (view == this.btnHome) {
             this.listener.changePage(1);
-        } else if (view == this.btnPage2) {
+        } else if (view == this.btnMenu) {
             this.listener.changePage(2);
         } else if (view == this.btnExit) {
             this.listener.closeApplication();

@@ -1,4 +1,4 @@
-package com.example.randomizermenumakanan;
+package com.example.randomizermenumakanan.Fragment;
 
 public interface FragmentListener {
     void changePage(int page);
