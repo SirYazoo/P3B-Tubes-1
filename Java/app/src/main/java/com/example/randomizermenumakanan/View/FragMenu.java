@@ -5,15 +5,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.randomizermenumakanan.Presenter.MainPresenter;
 import com.example.randomizermenumakanan.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class FragMenu extends Fragment implements View.OnClickListener {
     private FloatingActionButton btnTambah;
     private FragmentListener listener;
+    private ListView listMenu;
+    private Adapter adapter;
+    private MainPresenter presenter;
 
     public FragMenu() {
 
@@ -23,6 +28,8 @@ public class FragMenu extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_frag_menu, container, false);
         this.btnTambah = view.findViewById(R.id.btnTambah);
+        this.listMenu = view.findViewById(R.id.lvMenu);
+        this.adapter = new Adapter(this, this.presenter);
         this.btnTambah.setOnClickListener(this);
         return view;
     }

@@ -7,10 +7,14 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.randomizermenumakanan.IFragment;
+import com.example.randomizermenumakanan.Model.IsiMenu;
 import com.example.randomizermenumakanan.PenyimpanNilai;
 import com.example.randomizermenumakanan.databinding.FragmentFragEditBinding;
 
-public class FragEdit extends Fragment {
+import java.util.List;
+
+public class FragEdit extends Fragment implements IFragment {
     private FragmentFragEditBinding binding;
     private PenyimpanNilai penyimpanNilai;
 
@@ -42,5 +46,15 @@ public class FragEdit extends Fragment {
         this.binding.editBahan.setText(this.penyimpanNilai.getEditBahan());
         this.binding.editLangkah.setText(this.penyimpanNilai.getEditLangkah());
         this.binding.editResto.setText(this.penyimpanNilai.getEditRestoran());
+    }
+
+    @Override
+    public void updateList(List<IsiMenu> isiMenu) {
+
+    }
+
+    @Override
+    public void resetForm() {
+
     }
 }
