@@ -1,4 +1,4 @@
-package com.example.randomizermenumakanan.Model;
+package com.example.randomizermenumakanan;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -26,7 +26,7 @@ class FragTambahMenu : Fragment(), View.OnClickListener {
 
         this.binding.tambahAdd.setOnClickListener(this)
 
-        return view
+        return this.binding.root
     }
 
     override fun onAttach(context: Context) {

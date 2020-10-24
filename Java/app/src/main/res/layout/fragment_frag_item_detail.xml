@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="15dp"
     android:background="#FFFFFF"
-    tools:context=".View.FragTambahMenu">
+    tools:context=".View.FragItemDetail">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,9 +14,9 @@
         android:orientation="vertical">
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -25,19 +25,17 @@
                 android:text="Nama Menu: "
                 android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/tambahNama"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
+                android:text="@string/nama_makanan"
                 android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -46,19 +44,17 @@
                 android:text="Tag: "
                 android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/tambahTag"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
+                android:text="@string/tag"
                 android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -67,19 +63,17 @@
                 android:text="Bahan: "
                 android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/tambahBahan"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
+                android:text="@string/bahan"
                 android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -88,19 +82,16 @@
                 android:text="Langkah Memasak: "
                 android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/tambahLangkah"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
+                android:text="@string/langkah_memasak"
                 android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <TextView
@@ -109,24 +100,30 @@
                 android:text="Tersedia Di Resto: "
                 android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/tambahResto"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
+                android:text="@string/tersedia_resto"
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/tambahAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Add"
-            android:textSize="15dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/detailEdit"
+                android:layout_width="61dp"
+                android:layout_height="65dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="40dp"
+                android:backgroundTint="#808080"
+                android:clickable="true"
+                android:tint="#FFFFFF"
+                app:borderWidth="0dp"
+                app:srcCompat="@android:drawable/ic_input_add" />
+        </RelativeLayout>
     </LinearLayout>
 
 </FrameLayout>

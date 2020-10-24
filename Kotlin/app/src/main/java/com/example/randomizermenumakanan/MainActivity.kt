@@ -81,8 +81,8 @@ class MainActivity : AppCompatActivity(), FragmentListener {
             if (fragEdit.isAdded) {
                 ft.hide(fragEdit)
             }
-            if (fragMenu.isAdded) {
-                ft.hide(fragMenu)
+            if (fragMain.isAdded) {
+                ft.hide(fragMain)
             }
         } else if (page == 3) {
             if (fragTambah.isAdded) {

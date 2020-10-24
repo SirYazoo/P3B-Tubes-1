@@ -1,4 +1,4 @@
-package com.example.randomizermenumakanan.Fragment;
+package com.example.randomizermenumakanan.View;
 
 import android.content.Context;
 import android.os.Bundle;
