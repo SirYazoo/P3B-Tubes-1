@@ -24,11 +24,11 @@ class FragEdit : Fragment() {
 
     override fun onPause(){
         super.onPause()
-        this.penyimpanNilai.saveTambahNama(this.binding.editNama.getText().toString())
-        this.penyimpanNilai.saveTambahTag(this.binding.editTag.getText().toString())
-        this.penyimpanNilai.saveTambahBahan(this.binding.editBahan.getText().toString())
-        this.penyimpanNilai.saveTambahLangkah(this.binding.editLangkah.getText().toString())
-        this.penyimpanNilai.saveTambahRestoran(this.binding.editResto.getText().toString())
+        this.penyimpanNilai.saveEditNama(this.binding.editNama.getText().toString())
+        this.penyimpanNilai.saveEditTag(this.binding.editTag.getText().toString())
+        this.penyimpanNilai.saveEditBahan(this.binding.editBahan.getText().toString())
+        this.penyimpanNilai.saveEditLangkah(this.binding.editLangkah.getText().toString())
+        this.penyimpanNilai.saveEditRestoran(this.binding.editResto.getText().toString())
     }
 
     override fun onResume(){
