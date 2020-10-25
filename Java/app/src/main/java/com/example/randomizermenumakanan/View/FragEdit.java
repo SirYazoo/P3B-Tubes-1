@@ -72,7 +72,7 @@ public class FragEdit extends Fragment implements View.OnClickListener {
                         this.binding.editBahan.getText().toString(),
                         this.binding.editLangkah.getText().toString(),
                         this.binding.editResto.getText().toString());
-                this.listener.changePage(2);
+                this.listener.changePage(4);
             }
             this.binding.editNama.setText("");
             this.binding.editTag.setText("");

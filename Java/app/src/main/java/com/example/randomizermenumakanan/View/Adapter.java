@@ -83,7 +83,8 @@ public class Adapter extends BaseAdapter {
             if (v == this.imgTrash) {
                 this.mainPresenter.deleteList(this.position);
             } else if (v == this.btnListMenu) {
-                this.mainPresenter.itemDetail(this.isiMenu);
+                this.mainPresenter.itemDetail(this.isiMenu, this.position);
+                this.mainPresenter.changePage(4);
             }
         }
 

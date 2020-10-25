@@ -159,8 +159,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     }
 
     @Override
-    public void getItemDetail(IsiMenu isiMenu) {
-        this.fragDetail.setMenu(isiMenu);
+    public void getItemDetail(IsiMenu isiMenu, int position) {
+        this.fragDetail.setMenu(isiMenu, position);
     }
 
     @Override

@@ -38,8 +38,8 @@ public class MainPresenter {
         this.ui.resetForm();
     }
 
-    public void itemDetail(IsiMenu isiMenu) {
-        this.listener.getItemDetail(isiMenu);
+    public void itemDetail(IsiMenu isiMenu, int position) {
+        this.listener.getItemDetail(isiMenu, position);
     }
 
     public void changePage(int page) {

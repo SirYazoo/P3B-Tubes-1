@@ -17,13 +17,15 @@ public class FragItemDetail extends Fragment implements View.OnClickListener {
     private FragmentFragItemDetailBinding binding;
     private MainPresenter mainPresenter;
     private IsiMenu isiMenu;
+    private int position;
 
     public FragItemDetail(MainPresenter mainPresenter) {
         this.mainPresenter = mainPresenter;
     }
 
-    public void setMenu(IsiMenu isiMenu) {
+    public void setMenu(IsiMenu isiMenu, int position) {
         this.isiMenu = isiMenu;
+        this.position = position;
     }
 
     @Override
