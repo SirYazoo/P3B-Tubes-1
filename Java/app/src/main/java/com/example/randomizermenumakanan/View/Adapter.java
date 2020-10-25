@@ -1,5 +1,6 @@
 package com.example.randomizermenumakanan.View;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +18,11 @@ import java.util.List;
 
 public class Adapter extends BaseAdapter {
     private List<IsiMenu> listMenu;
-    private Context context;
+    private Activity activity;
     private MainPresenter mainPresenter;
 
-    public Adapter(Context context, MainPresenter mainPresenter) {
-        this.context = context;
+    public Adapter(Activity activity, MainPresenter mainPresenter) {
+        this.activity = activity;
         this.listMenu = new ArrayList<>();
         this.mainPresenter = mainPresenter;
     }
@@ -51,7 +52,7 @@ public class Adapter extends BaseAdapter {
     public View getView(int i, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(this.context).inflate(R.layout.list_group, parent, false);
+            convertView = LayoutInflater.from(this.activity).inflate(R.layout.list_group, parent, false);
             viewHolder = new ViewHolder(convertView, this.mainPresenter);
             convertView.setTag(viewHolder);
         } else {
@@ -66,6 +67,7 @@ public class Adapter extends BaseAdapter {
         protected ImageButton imgTrash;
         protected MainPresenter mainPresenter;
         protected int position;
+        private IsiMenu isiMenu;
 
         public ViewHolder(View convertView, MainPresenter mainPresenter) {
             this.btnListMenu = convertView.findViewById(R.id.btnListMenu);
@@ -81,13 +83,14 @@ public class Adapter extends BaseAdapter {
             if (v == this.imgTrash) {
                 this.mainPresenter.deleteList(this.position);
             } else if (v == this.btnListMenu) {
-//                this.mainPresenter.;
+                this.mainPresenter.itemDetail(this.isiMenu);
             }
         }
 
         public void updateView(IsiMenu isiMenu, int position) {
             this.btnListMenu.setText(isiMenu.getNama());
             this.position = position;
+            this.isiMenu = isiMenu;
         }
     }
 }

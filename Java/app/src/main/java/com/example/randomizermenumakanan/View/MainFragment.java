@@ -8,15 +8,17 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.randomizermenumakanan.Presenter.MainPresenter;
 import com.example.randomizermenumakanan.databinding.FragmentMainBinding;
 
 
 public class MainFragment extends Fragment implements View.OnClickListener {
     private FragmentListener listener;
     private FragmentMainBinding binding;
+    private MainPresenter mainPresenter;
 
-    public MainFragment() {
-
+    public MainFragment(MainPresenter mainPresenter) {
+        this.mainPresenter = mainPresenter;
     }
 
     @Override

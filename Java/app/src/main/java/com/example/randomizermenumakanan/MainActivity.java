@@ -10,6 +10,9 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.example.randomizermenumakanan.Model.IsiMenu;
+import com.example.randomizermenumakanan.Presenter.IMainActivity;
+import com.example.randomizermenumakanan.Presenter.MainPresenter;
 import com.example.randomizermenumakanan.View.FragEdit;
 import com.example.randomizermenumakanan.View.FragItemDetail;
 import com.example.randomizermenumakanan.View.FragMenu;
@@ -17,7 +20,9 @@ import com.example.randomizermenumakanan.View.FragTambahMenu;
 import com.example.randomizermenumakanan.View.FragmentListener;
 import com.example.randomizermenumakanan.View.MainFragment;
 
-public class MainActivity extends AppCompatActivity implements FragmentListener {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements FragmentListener, IMainActivity {
 
     private MainFragment fragMain;
     private FragmentManager fragmentManager;
@@ -27,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     private FragTambahMenu fragTambah;
     private FragItemDetail fragDetail;
     private FragEdit fragEdit;
+    private MainPresenter mainPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +44,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         ActionBarDrawerToggle abdt = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.openDrawer, R.string.closeDrawer);
         drawer.addDrawerListener(abdt);
         abdt.syncState();
-        this.fragTambah = new FragTambahMenu();
-        this.fragMain = new MainFragment();
-        this.fragMenu = new FragMenu();
-        this.fragDetail = new FragItemDetail();
-        this.fragEdit = new FragEdit();
+        this.mainPresenter = new MainPresenter(this, this);
+        this.fragTambah = new FragTambahMenu(this.mainPresenter);
+        this.fragMain = new MainFragment(this.mainPresenter);
+        this.fragMenu = new FragMenu(this.mainPresenter);
+        this.fragDetail = new FragItemDetail(this.mainPresenter);
+        this.fragEdit = new FragEdit(this.mainPresenter);
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.fragment_container, this.fragMain).addToBackStack(null).commit();
@@ -145,8 +152,24 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.drawer.closeDrawers();
     }
 
+    @Override
     public void closeApplication() {
         this.moveTaskToBack(true);
         this.finish();
+    }
+
+    @Override
+    public void getItemDetail(IsiMenu isiMenu) {
+        this.fragDetail.setMenu(isiMenu);
+    }
+
+    @Override
+    public void updateList(List<IsiMenu> isiMenu) {
+        this.fragMenu.updateList(isiMenu);
+    }
+
+    @Override
+    public void resetForm() {
+
     }
 }

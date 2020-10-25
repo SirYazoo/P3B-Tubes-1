@@ -5,31 +5,30 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.randomizermenumakanan.IFragment;
+import com.example.randomizermenumakanan.Presenter.IMainActivity;
 import com.example.randomizermenumakanan.Model.IsiMenu;
 import com.example.randomizermenumakanan.Presenter.MainPresenter;
 import com.example.randomizermenumakanan.databinding.FragmentFragMenuBinding;
 
 import java.util.List;
 
-public class FragMenu extends Fragment implements View.OnClickListener, IFragment {
+public class FragMenu extends Fragment implements View.OnClickListener, IMainActivity {
     private FragmentListener listener;
     private Adapter adapter;
     private MainPresenter mainPresenter;
     private FragmentFragMenuBinding binding;
 
-    public FragMenu() {
-
+    public FragMenu(MainPresenter mainPresenter) {
+        this.mainPresenter = mainPresenter;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         this.binding = FragmentFragMenuBinding.inflate(inflater, container, false);
-        this.mainPresenter = new MainPresenter(this);
+        this.mainPresenter = new MainPresenter(this, this.listener);
         this.adapter = new Adapter(this.getActivity(), this.mainPresenter);
         this.binding.lvMenu.setAdapter(this.adapter);
         this.binding.btnTambah.setOnClickListener(this);

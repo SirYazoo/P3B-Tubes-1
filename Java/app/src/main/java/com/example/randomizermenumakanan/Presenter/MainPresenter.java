@@ -1,18 +1,20 @@
 package com.example.randomizermenumakanan.Presenter;
 
-import com.example.randomizermenumakanan.IFragment;
 import com.example.randomizermenumakanan.Model.IsiMenu;
+import com.example.randomizermenumakanan.View.FragmentListener;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class MainPresenter {
     protected List<IsiMenu> isiMenu;
-    protected IFragment ui;
+    protected IMainActivity ui;
+    protected FragmentListener listener;
 
-    public MainPresenter(IFragment IFragment) {
-        this.ui = IFragment;
+    public MainPresenter(IMainActivity IMainActivity, FragmentListener listener) {
+        this.ui = IMainActivity;
         this.isiMenu = new LinkedList<>();
+        this.listener = listener;
     }
 
     public void deleteList(int position) {
@@ -34,5 +36,13 @@ public class MainPresenter {
         this.isiMenu.get(index).setRestoran(restoran);
         this.ui.updateList(this.isiMenu);
         this.ui.resetForm();
+    }
+
+    public void itemDetail(IsiMenu isiMenu) {
+        this.listener.getItemDetail(isiMenu);
+    }
+
+    public void changePage(int page) {
+        this.listener.changePage(page);
     }
 }
